@@ -7,7 +7,6 @@ $(document).ready(function () {
     const phone = $("#phone").val();
     const address = $("#address").val();
     if (name && email && phone && address) {
-      debugger;
       const taskId = $(this).data("id"); //data()=>store data of selected element
       if (taskId) {
         // If taskId exists, update the task
@@ -83,13 +82,11 @@ $(document).ready(function () {
   }
 
   $(document).on("click", ".edit", function () {
-    debugger;
     const InfoId = $(this).parents(".InfoItem").data("id");
     editTask(InfoId);
   });
 
   $(document).on("click", ".delete", function () {
-    debugger;
     const InfoId = $(this).closest(".InfoItem").data("id");
     deleteTask(InfoId);
   });
