@@ -82,7 +82,7 @@ $(document).ready(function () {
     });
   }
 
-  $(".edit").on("click", function () {
+  $(document).on("click", ".edit", function () {
     debugger;
     const InfoId = $(this).parents(".InfoItem").data("id");
     editTask(InfoId);
@@ -94,13 +94,11 @@ $(document).ready(function () {
     deleteTask(InfoId);
   });
 
-  // Function to get info from localStorage
   function getTasksFromLocalStorage() {
     const info = localStorage.getItem("Information");
     return info ? JSON.parse(info) : [];
   }
 
-  // Function to edit a task
   function editTask(InfoId) {
     const infos = getTasksFromLocalStorage();
     const info = infos.find((t) => t.id === InfoId);
